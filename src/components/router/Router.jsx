@@ -8,7 +8,7 @@ import ProfilePage from '../../pages/profile/ProfilePage'
 import TestPage from '../../pages/test/TestPage'
 import ResultPage from '../../pages/result/ResultPage'
 
-import Layout from '../layout.jsx/Layout'
+import Layout from '../layout/Layout'
 
 const Router = () => {
   return (

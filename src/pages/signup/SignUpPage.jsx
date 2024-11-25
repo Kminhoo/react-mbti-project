@@ -1,5 +1,7 @@
+import SignupWithLoginForm from '../../components/feature/SignupWithLoginForm'
+
 const SignUpPage = () => {
-  return <div>SignUpPage</div>
+  return <SignupWithLoginForm type="signup" />
 }
 
 export default SignUpPage
