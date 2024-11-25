@@ -1,13 +1,20 @@
 import { useState } from 'react'
 
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
+import { useMutation } from '@tanstack/react-query'
+
+import { toast } from 'react-toastify'
 
 import InputField from './InputField'
 import FormBtnGroup from './FormBtnGroup'
 
+import { userLogin, userSignUp } from '../../api/auth'
+
 import { User, NickName, Password } from '../icons/icons'
 
 const SignupWithLoginForm = ({ type }) => {
+  const navigate = useNavigate()
   // user 정보 상태
   const [userData, setUserData] = useState({
     id: '',
@@ -23,32 +30,48 @@ const SignupWithLoginForm = ({ type }) => {
       ...prev,
       [id]: value
     }))
-    console.log(userData)
   }
 
-  // 제출
-  const handleSignupSubmit = async (e) => {
+  // 회원가입
+  const handleSignupSubmit = useMutation({
+    mutationFn: userSignUp,
+    onSuccess: () => {
+      toast.success('회원가입에 성공했습니다.')
+      navigate('/login')
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`)
+    }
+  })
+
+  // 로그인
+  const handleLoginSubmit = useMutation({
+    mutationFn: userLogin,
+    onSuccess: (data) => {
+      toast.success('로그인에 성공했습니다.')
+      navigate('/login')
+      console.log(data)
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`)
+    }
+  })
+
+  const handleSubmit = (e) => {
     e.preventDefault()
 
-    const { passwordCheck, ...restData } = userData
-
-    const response = await axios.post('https://moneyfulpublicpolicy.co.kr/register', restData)
-    console.log(response)
+    if (type) {
+      handleSignupSubmit.mutate(userData)
+    } else {
+      handleLoginSubmit.mutate(userData)
+    }
   }
 
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault()
-
-    const { passwordCheck, nickname, ...restData } = userData
-    const response = await axios.post('https://moneyfulpublicpolicy.co.kr/login', restData)
-    console.log(response)
-  }
+  // 비밀번호 확인 조건
+  const passwordCheckText = userData.password && userData.password !== userData.passwordCheck
 
   return (
-    <form
-      onSubmit={type ? (e) => handleSignupSubmit(e) : (e) => handleLoginSubmit(e)}
-      className="m-auto max-w-sm w-full border p-4 rounded-lg shadow-sm"
-    >
+    <form onSubmit={(e) => handleSubmit(e)} className="m-auto max-w-sm w-full border p-4 rounded-lg shadow-sm">
       <div className="w-full text-center">
         <h3 className="text-2xl font-bold tracking-wide">{type ? '회원가입' : '로그인'}</h3>
         <p className="mt-1 text-sm text-slate-400">{`아래의 정보를 입력하여 ${type ? '회원가입' : '로그인'} 하세요.`}</p>
@@ -101,13 +124,14 @@ const SignupWithLoginForm = ({ type }) => {
             onChange={handleChange}
           />
         )}
+        {type && passwordCheckText && <p className="text-xs mt-[-15px] text-red-600">비밀번호가 서로 같지 않습니다.</p>}
       </div>
 
       <FormBtnGroup
         firstLabel={type ? '가입하기' : '로그인'}
         secondLabel={type ? '홈페이지로 이동하기' : '회원가입'}
         page={type && 'signup'}
-        move={type ? '/main' : '/signup'}
+        move={type ? '/' : '/signup'}
       />
     </form>
   )

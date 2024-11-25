@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import { ToastContainer } from 'react-toastify'
+
 import HomePage from '../../pages/home/HomePage'
 import MainPage from '../../pages/main/MainPage'
 import LoginPage from '../../pages/login/LoginPage'
@@ -10,9 +12,12 @@ import ResultPage from '../../pages/result/ResultPage'
 
 import Layout from '../layout/Layout'
 
+import 'react-toastify/dist/ReactToastify.css'
+
 const Router = () => {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
