@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className="shadow-md">
+    <header className=" shadow-md">
       <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">
         <h2 className="flex text-end gap-1 text-2xl font-bold tracking-wider ">
           MBTI

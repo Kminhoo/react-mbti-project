@@ -1,5 +1,7 @@
+import Test from '../../components/ui/test/Test'
+
 const TestPage = () => {
-  return <div>TestPage</div>
+  return <Test />
 }
 
 export default TestPage

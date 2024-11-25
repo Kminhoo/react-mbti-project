@@ -19,9 +19,9 @@ const Router = () => {
     <BrowserRouter>
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route element={<Layout />}>
           <Route path="/main" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
