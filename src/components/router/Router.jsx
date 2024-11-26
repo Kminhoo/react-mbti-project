@@ -13,6 +13,7 @@ import ResultPage from '../../pages/result/ResultPage'
 import Layout from '../layout/Layout'
 
 import 'react-toastify/dist/ReactToastify.css'
+import ProtectedRoute from './ProtectedRoute'
 
 const Router = () => {
   return (
@@ -22,11 +23,13 @@ const Router = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/" element={<HomePage />} />
-        <Route element={<Layout />}>
-          <Route path="/main" element={<MainPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/mbti-test" element={<TestPage />} />
-          <Route path="/test-result" element={<ResultPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/main" element={<MainPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/mbti-test" element={<TestPage />} />
+            <Route path="/test-result" element={<ResultPage />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

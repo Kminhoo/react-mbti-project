@@ -1,5 +1,7 @@
+import HomeSection from '../../components/ui/main/HomeSection'
+
 const MainPage = () => {
-  return <div>MainPage</div>
+  return <HomeSection />
 }
 
 export default MainPage

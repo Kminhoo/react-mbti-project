@@ -5,9 +5,9 @@ import { questions } from '../../data/question'
 const TestForm = ({ onSubmit }) => {
   const [answers, setAnswers] = useState(Array(questions.length).fill({ type: '', answer: '' }))
 
-  const handleChange = (index, answer) => {
+  const handleChange = (index, value) => {
     const newAnswers = [...answers]
-    newAnswers[index] = { type: questions[index].type, answer }
+    newAnswers[index] = { type: questions[index].type, answer: value }
     setAnswers(newAnswers)
   }
 

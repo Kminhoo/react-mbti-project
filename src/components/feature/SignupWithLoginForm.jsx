@@ -13,7 +13,11 @@ import { userLogin, userSignUp } from '../../api/auth'
 
 import { User, NickName, Password } from '../icons/icons'
 
+import useAuthStore from '../../store/authStore'
+
 const SignupWithLoginForm = ({ type }) => {
+  const login = useAuthStore((state) => state.login)
+
   const navigate = useNavigate()
   // user 정보 상태
   const [userData, setUserData] = useState({
@@ -40,7 +44,8 @@ const SignupWithLoginForm = ({ type }) => {
       navigate('/login')
     },
     onError: (error) => {
-      toast.error(`${error.message}`)
+      console.log(error)
+      toast.error(`${error.response.data.message}`)
     }
   })
 
@@ -49,21 +54,55 @@ const SignupWithLoginForm = ({ type }) => {
     mutationFn: userLogin,
     onSuccess: (data) => {
       toast.success('로그인에 성공했습니다.')
-      navigate('/login')
-      console.log(data)
+      login(data)
+      // login(data)
+      navigate('/main')
     },
     onError: (error) => {
-      toast.error(`${error.message}`)
+      toast.error(`${error.response.data.message}`)
     }
   })
+
+  const vaildationCheck = (userData) => {
+    if (!userData.id) {
+      toast.warning('ID를 입력해 주세요.')
+      return false
+    }
+
+    if (!userData.password) {
+      toast.warning('비밀번호를 입력해 주세요.')
+      return false
+    }
+
+    if (type) {
+      if (!userData.nickname) {
+        toast.warning('닉네임을 입력해 주세요.')
+        return false
+      }
+
+      if (!userData.passwordCheck) {
+        toast.warning('비밀번호 확인을 입력해 주세요.')
+        return false
+      }
+
+      if (userData.password !== userData.passwordCheck) {
+        toast.warning('비밀번호가 서로 같지 않습니다.')
+        return false
+      }
+    }
+
+    return true
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (type) {
-      handleSignupSubmit.mutate(userData)
-    } else {
-      handleLoginSubmit.mutate(userData)
+    if (vaildationCheck(userData)) {
+      if (type) {
+        handleSignupSubmit.mutate(userData)
+      } else {
+        handleLoginSubmit.mutate(userData)
+      }
     }
   }
 

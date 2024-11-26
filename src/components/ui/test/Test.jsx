@@ -2,7 +2,15 @@ import { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
+import { useMutation } from '@tanstack/react-query'
+
+import { toast } from 'react-toastify'
+
 import TestForm from '../../feature/TestForm'
+
+import useAuthStore from '../../../store/authStore'
+
+import { createTestResult } from '../../../api/testResult'
 
 import { calculateMBTI, mbtiDescriptions } from '../../../utils/testResult'
 
@@ -11,12 +19,32 @@ const Test = () => {
 
   const [result, setResult] = useState(null)
 
+  const user = useAuthStore((state) => state.user)
+
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers)
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
+
+    const resultData = {
+      created_At: new Date(),
+      mbti: mbtiResult,
+      desc: mbtiDescriptions[mbtiResult],
+      userData: user
+    }
+
+    const response = await createTestResult(resultData)
     setResult(mbtiResult)
-    console.log(mbtiResult)
+    return response
   }
+
+  const handleSubmitTest = useMutation({
+    mutationFn: handleTestSubmit,
+    onSuccess: () => {
+      toast.success('결과를 확인해 보세요!')
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`)
+    }
+  })
 
   const handleNavigateToResults = () => {
     navigate('/test-result')
@@ -24,11 +52,11 @@ const Test = () => {
 
   return (
     <section>
-      <div className="max-w-7xl mt-10 mx-auto min-h-[80vh] flex items-center justify-center">
+      <div className="max-w-7xl mt-10 mx-auto min-h-[80vh] flex flex-col items-center justify-center">
         {!result ? (
           <>
             <h1 className="text-3xl font-bold text-primary-color mb-6">MBTI 테스트</h1>
-            <TestForm onSubmit={handleTestSubmit} />
+            <TestForm onSubmit={handleSubmitTest.mutate} />
           </>
         ) : (
           <div className="w-[500px]">
