@@ -28,7 +28,11 @@ const Test = () => {
       created_At: new Date(),
       mbti: mbtiResult,
       desc: mbtiDescriptions[mbtiResult],
-      userData: user
+      userData: {
+        accessToken: user.accessToken,
+        nickname: user.nickname
+      },
+      isPublic: true
     }
 
     const response = await createTestResult(resultData)

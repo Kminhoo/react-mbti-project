@@ -55,7 +55,6 @@ const SignupWithLoginForm = ({ type }) => {
     onSuccess: (data) => {
       toast.success('로그인에 성공했습니다.')
       login(data)
-      // login(data)
       navigate('/main')
     },
     onError: (error) => {
