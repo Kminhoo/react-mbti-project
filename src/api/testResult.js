@@ -17,11 +17,12 @@ export const createTestResult = async (resultData) => {
   return response.data
 }
 
-export const deleteTestResult = async (id) => {}
+export const deleteTestResult = async (id) => {
+  const response = await testResultAxiosInstance.delete(`/testResults/${id}`)
+  return response.data
+}
 
 export const updateTestResultVisibility = async ({ id, isPublic }) => {
-  console.log('id', id)
-  console.log('isPublic', isPublic)
   const response = await testResultAxiosInstance.patch(`/testResults/${id}`, { isPublic })
   return response
 }

@@ -25,7 +25,7 @@ const Test = () => {
     const mbtiResult = calculateMBTI(answers)
 
     const resultData = {
-      created_At: new Date(),
+      created_At: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
       mbti: mbtiResult,
       desc: mbtiDescriptions[mbtiResult],
       isPublic: true,

@@ -39,13 +39,11 @@ const SignupWithLoginForm = ({ type }) => {
   // 회원가입
   const handleSignupSubmit = useMutation({
     mutationFn: userSignUp,
-    onSuccess: (data) => {
+    onSuccess: () => {
       toast.success('회원가입에 성공했습니다.')
       navigate('/login')
-      console.log(data)
     },
     onError: (error) => {
-      console.log(error)
       toast.error(`${error.response.data.message}`)
     }
   })
@@ -54,7 +52,6 @@ const SignupWithLoginForm = ({ type }) => {
   const handleLoginSubmit = useMutation({
     mutationFn: userLogin,
     onSuccess: (data) => {
-      console.log('login', data)
       toast.success('로그인에 성공했습니다.')
       login(data)
       navigate('/main')
