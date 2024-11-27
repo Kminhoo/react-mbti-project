@@ -13,6 +13,7 @@ import ResultPage from '../../pages/result/ResultPage'
 import Layout from '../layout/Layout'
 
 import ProtectedRoute from './ProtectedRoute'
+import PublicRoute from './PublicRoute'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -22,8 +23,10 @@ const Router = () => {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
+        <Route element={<PublicRoute />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+        </Route>
         <Route element={<Layout />}>
           <Route path="/main" element={<MainPage />} />
           <Route element={<ProtectedRoute />}>

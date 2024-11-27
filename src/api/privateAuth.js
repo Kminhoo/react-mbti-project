@@ -1,5 +1,8 @@
 import axios from 'axios'
+
 import { toast } from 'react-toastify'
+
+import useAuthStore from '../store/authStore'
 
 const API_URL = 'https://moneyfulpublicpolicy.co.kr'
 
@@ -26,7 +29,8 @@ userPrivateAxiosInstance.interceptors.response.use(
     if (err.response && err.response.data) {
       toast.warning(err.response.data.message)
       if (err.response.data.message === '토큰이 만료되었습니다. 다시 로그인 해주세요.') {
-        localStorage.removeItem('auth')
+        useAuthStore.getState().logout()
+        localStorage.clear()
       }
     }
     return Promise.reject(err)

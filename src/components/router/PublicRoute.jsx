@@ -2,14 +2,14 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 import useAuthStore from '../../store/authStore'
 
-const ProtectedRoute = () => {
+const PublicRoute = () => {
   const { isLoggedIn } = useAuthStore((state) => state.isLoggedIn)
 
-  if (!isLoggedIn) {
-    return <Navigate to="/login" replace />
+  if (isLoggedIn) {
+    return <Navigate to="/main" replace />
   }
 
   return <Outlet />
 }
 
-export default ProtectedRoute
+export default PublicRoute
