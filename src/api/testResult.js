@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const TEST_API_URL = 'http://localhost:5000'
+const TEST_API_URL = 'https://sapphire-night-country.glitch.me'
 
 const testResultAxiosInstance = axios.create({
   baseURL: TEST_API_URL,

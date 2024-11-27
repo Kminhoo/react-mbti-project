@@ -11,7 +11,7 @@ import FormBtnGroup from './FormBtnGroup'
 
 import { userLogin, userSignUp } from '../../api/auth'
 
-import { User, NickName, Password } from '../icons/icons'
+import { User, NickName, Password } from '../icon'
 
 import useAuthStore from '../../store/authStore'
 

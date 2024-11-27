@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { PasswordSee } from '../icons/icons'
+import { PasswordSee } from '../icon'
 
 const InputField = ({ label, Icon, type, showPassword, placeholder, id, check, value, onChange }) => {
   const [displayPassword, setDisplayPassword] = useState(false)
