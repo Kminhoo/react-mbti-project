@@ -31,7 +31,8 @@ const Test = () => {
       isPublic: true,
       userData: {
         accessToken: user.accessToken,
-        nickname: user.nickname
+        nickname: user.nickname,
+        userId: user.userId
       }
     }
 

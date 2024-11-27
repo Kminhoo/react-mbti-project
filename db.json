@@ -1,36 +1,39 @@
 {
   "testResults": [
     {
-      "id": "9949",
-      "created_At": "2024-11-26T09:07:58.839Z",
+      "id": "e369",
+      "created_At": "2024. 11. 27. 오전 10:46:15",
       "mbti": "ESTJ",
       "desc": "ESTJ: 체계적인 지휘관! ESTJ는 모든 것을 계획하고 조직하는 능력이 탁월한 사람들입니다. 이들은 무엇이든 정확하게 처리하고 싶어하며, '제대로 된 절차가 있으면 모든 게 순조롭게 진행될 수 있어'라는 믿음을 가지고 있어요. 그러나 가끔은 너무 엄격해서 주변 사람들이 '조금만 느긋하게 지내면 안 될까?'라고 묻고 싶을 때가 있을지도 몰라요. 그래도 이들은 확실히 모든 일을 끝내고야 마는 성격이에요.",
       "isPublic": true,
       "userData": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMjM0IiwiaWF0IjoxNzMyNjEyMDU2LCJleHAiOjE3MzI2MTU2NTZ9.f5_owcy-8RmRIgz0nupApCfznrs596ZqCiHOeaY1Bck",
-        "nickname": "123456"
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMjM0NSIsImlhdCI6MTczMjY3MTcwMiwiZXhwIjoxNzMyNjc1MzAyfQ.Kuk0Bq1_aibzwg2QxAl0rG9J49J1rD6-YuQWiwbKgbA",
+        "nickname": "ㅂㅈㅇㅂㅈㅇㅂ",
+        "userId": "test12345"
       }
     },
     {
-      "id": "143c",
-      "created_At": "2024-11-26T09:08:37.915Z",
+      "id": "c33c",
+      "created_At": "2024. 11. 27. 오전 10:46:41",
       "mbti": "ESTJ",
       "desc": "ESTJ: 체계적인 지휘관! ESTJ는 모든 것을 계획하고 조직하는 능력이 탁월한 사람들입니다. 이들은 무엇이든 정확하게 처리하고 싶어하며, '제대로 된 절차가 있으면 모든 게 순조롭게 진행될 수 있어'라는 믿음을 가지고 있어요. 그러나 가끔은 너무 엄격해서 주변 사람들이 '조금만 느긋하게 지내면 안 될까?'라고 묻고 싶을 때가 있을지도 몰라요. 그래도 이들은 확실히 모든 일을 끝내고야 마는 성격이에요.",
       "isPublic": true,
       "userData": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImhvbzEyMzQ1IiwiaWF0IjoxNzMyNjEyMDk1LCJleHAiOjE3MzI2MTU2OTV9.OHsPTI1rw1vZc8IsvsjpdB9Q18BkdyOJQ3RiDZkK5Zg",
-        "nickname": "wefwf"
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMjM0NSIsImlhdCI6MTczMjY3MTcwMiwiZXhwIjoxNzMyNjc1MzAyfQ.Kuk0Bq1_aibzwg2QxAl0rG9J49J1rD6-YuQWiwbKgbA",
+        "nickname": "ㅂㅈㅇㅂㅈㅇㅂ",
+        "userId": "test12345"
       }
     },
     {
-      "id": "e8e6",
-      "created_At": "2024. 11. 26. 오후 8:35:46",
+      "id": "8b90",
+      "created_At": "2024. 11. 27. 오전 10:48:47",
       "mbti": "ESTJ",
       "desc": "ESTJ: 체계적인 지휘관! ESTJ는 모든 것을 계획하고 조직하는 능력이 탁월한 사람들입니다. 이들은 무엇이든 정확하게 처리하고 싶어하며, '제대로 된 절차가 있으면 모든 게 순조롭게 진행될 수 있어'라는 믿음을 가지고 있어요. 그러나 가끔은 너무 엄격해서 주변 사람들이 '조금만 느긋하게 지내면 안 될까?'라고 묻고 싶을 때가 있을지도 몰라요. 그래도 이들은 확실히 모든 일을 끝내고야 마는 성격이에요.",
       "isPublic": true,
       "userData": {
-        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMjM0NSIsImlhdCI6MTczMjYyMDA4NywiZXhwIjoxNzMyNjIzNjg3fQ.yeS6qGE8YjKis3Fb5L0b5FVf3ZzqjD5rW6QQxJEMMkc",
-        "nickname": "xptmxm!"
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InRlc3QxMjM0NSIsImlhdCI6MTczMjY3MTcwMiwiZXhwIjoxNzMyNjc1MzAyfQ.Kuk0Bq1_aibzwg2QxAl0rG9J49J1rD6-YuQWiwbKgbA",
+        "nickname": "ㅂㅈㅇㅂㅈㅇㅂ",
+        "userId": "test12345"
       }
     }
   ]

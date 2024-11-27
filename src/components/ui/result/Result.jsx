@@ -11,11 +11,12 @@ const Result = () => {
 
   const { data, isPending, isError } = useQuery({
     queryKey: ['mbti'],
-    queryFn: getTestResults
+    queryFn: getTestResults,
+    staleTime: 3000
   })
 
   // 필터링 된 조건
-  const filteredData = data?.filter((item) => item.isPublic || item.userData.nickname === user.nickname)
+  const filteredData = data?.filter((item) => item.isPublic || item.userData.userId === user.userId)
 
   if (isPending) {
     return <div>로딩중...</div>
@@ -36,7 +37,7 @@ const Result = () => {
             {filteredData.length > 0 ? (
               filteredData.map((item) => <ResultItem key={item.id} item={item} user={user} />)
             ) : (
-              <p>데이터가 없습니다. 지금 바로 검사를 시작해보세요</p>
+              <p className="flex items-center justify-center">데이터가 없습니다. 지금 바로 검사를 시작해보세요</p>
             )}
           </div>
         </div>
