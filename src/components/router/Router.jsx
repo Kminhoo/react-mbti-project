@@ -12,20 +12,21 @@ import ResultPage from '../../pages/result/ResultPage'
 
 import Layout from '../layout/Layout'
 
-import 'react-toastify/dist/ReactToastify.css'
 import ProtectedRoute from './ProtectedRoute'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 const Router = () => {
   return (
     <BrowserRouter>
       <ToastContainer />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route element={<ProtectedRoute />}>
-          <Route element={<Layout />}>
-            <Route path="/main" element={<MainPage />} />
+        <Route element={<Layout />}>
+          <Route path="/main" element={<MainPage />} />
+          <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/mbti-test" element={<TestPage />} />
             <Route path="/test-result" element={<ResultPage />} />

@@ -40,7 +40,7 @@ const ResultItem = ({ item, user }) => {
       <div className="mt-5">
         <p className="text-2xl tracking-wider text-red-400">{item.mbti}</p>
         <p className="mt-5 text-gray-300">{item.desc}</p>
-        {user.nickname === item.userData.nickname && (
+        {user.userId === item.userData.userId && (
           <div className="mt-5 flex items-center justify-end gap-5">
             <button
               onClick={() => handleChangePublic(item)}

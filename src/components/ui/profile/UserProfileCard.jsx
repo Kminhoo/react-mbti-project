@@ -6,6 +6,8 @@ import { toast } from 'react-toastify'
 
 import { fetchUserProfile, updateUserProfile } from '../../../api/auth'
 
+import noImage from '/public/images/noimg.webp'
+
 const UserProfileCard = () => {
   const [newName, setNewName] = useState('')
   const [profileChange, setProfileChange] = useState(false)
@@ -70,9 +72,9 @@ const UserProfileCard = () => {
     <div className="max-w-xl w-full border p-6 flex items-center justify-center gap-10 mb-28">
       <div>
         <img
-          src={data.avatar ? data.avatar : null}
+          src={data.avatar ? data.avatar : noImage}
           alt="User Profile"
-          className="w-28 h-28 rounded-full bg-orange-400 object-center"
+          className="w-28 h-28 rounded-full border object-center"
         />
       </div>
       <div className="flex flex-col gap-5">

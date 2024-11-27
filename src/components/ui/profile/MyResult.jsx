@@ -11,7 +11,8 @@ const MyResult = () => {
 
   const { data, isPending, isError } = useQuery({
     queryKey: ['mbti'],
-    queryFn: getTestResults
+    queryFn: getTestResults,
+    staleTime: 10 * 1000
   })
 
   const filteredResult = data?.filter((item) => item.userData.userId === user.userId)

@@ -12,7 +12,7 @@ const Result = () => {
   const { data, isPending, isError } = useQuery({
     queryKey: ['mbti'],
     queryFn: getTestResults,
-    staleTime: 3000
+    staleTime: 5 * 1000
   })
 
   // 필터링 된 조건
@@ -35,7 +35,7 @@ const Result = () => {
           </div>
           <div className="mt-10 flex flex-col gap-10">
             {filteredData.length > 0 ? (
-              filteredData.map((item) => <ResultItem key={item.id} item={item} user={user} />)
+              filteredData.map((item) => <ResultItem key={item.id} item={item} user={user} />).reverse()
             ) : (
               <p className="flex items-center justify-center">데이터가 없습니다. 지금 바로 검사를 시작해보세요</p>
             )}
@@ -47,3 +47,5 @@ const Result = () => {
 }
 
 export default Result
+// export const login = (userData, expiresIn = "1h") =>
+//   apiRequest("post", "/login", userData, { params: { expiresIn } });
