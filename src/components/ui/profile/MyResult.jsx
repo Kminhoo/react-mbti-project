@@ -9,8 +9,6 @@ import useAuthStore from '../../../store/authStore'
 const MyResult = () => {
   const user = useAuthStore((state) => state.user)
 
-  console.log(user)
-
   const { data, isPending, isError } = useQuery({
     queryKey: ['mbti'],
     queryFn: getTestResults

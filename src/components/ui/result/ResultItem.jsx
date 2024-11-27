@@ -15,8 +15,6 @@ const ResultItem = ({ item, user }) => {
     }
   })
 
-  console.log(typeof item.created_At)
-
   const deleteMutaion = useMutation({
     mutationFn: deleteTestResult,
     onSuccess: () => {
