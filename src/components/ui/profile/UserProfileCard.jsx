@@ -16,7 +16,7 @@ const UserProfileCard = () => {
 
   const { data, isPending, isError } = useQuery({
     queryKey: ['user'],
-    queryFn: () => fetchUserProfile()
+    queryFn: fetchUserProfile
   })
 
   // 낙관적 업데이트

@@ -4,6 +4,7 @@ const TEST_API_URL = 'https://sapphire-night-country.glitch.me'
 
 const testResultAxiosInstance = axios.create({
   baseURL: TEST_API_URL,
+  timeout: 5000,
   headers: { 'Content-Type': 'application/json' }
 })
 

@@ -8,6 +8,7 @@ const API_URL = 'https://moneyfulpublicpolicy.co.kr'
 
 const userPrivateAxiosInstance = axios.create({
   baseURL: API_URL,
+  timeout: 5000,
   headers: { 'Content-Type': 'application/json' }
 })
 

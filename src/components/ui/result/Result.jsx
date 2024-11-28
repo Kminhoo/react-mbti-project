@@ -47,5 +47,3 @@ const Result = () => {
 }
 
 export default Result
-// export const login = (userData, expiresIn = "1h") =>
-//   apiRequest("post", "/login", userData, { params: { expiresIn } });

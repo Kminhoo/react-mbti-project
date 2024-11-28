@@ -12,6 +12,9 @@ const ResultItem = ({ item, user }) => {
     onSuccess: () => {
       queryClient.invalidateQueries(['mbti'])
       toast.success('상태를 성공적으로 변경했습니다.')
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`)
     }
   })
 
@@ -20,6 +23,9 @@ const ResultItem = ({ item, user }) => {
     onSuccess: () => {
       queryClient.invalidateQueries(['mbti'])
       toast.success('게시글을 삭제 했습니다.')
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`)
     }
   })
 
